@@ -14,7 +14,7 @@ dataset_df=dataset_df.drop(columns=['text_embedding','time','image', 'previewLin
                                     'authors', 'publisher'])
 
 embed_model = resolve_embed_model("local:thenlper/gte-large") 
-llm = OpenAI(api_key='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')
+llm = OpenAI(api_key='')
 
 Settings.llm=llm
 Settings.embed_model=embed_model
