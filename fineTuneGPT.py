@@ -10,7 +10,7 @@ prepared_data.to_csv('prepared_data.csv',index=False)
 ### finetunnig completion
 # subprocess.run('openai tools fine_tunes.prepare_data --file prepared_data.csv --quiet'.split())
 # from openai import OpenAI
-# client = OpenAI(api_key = '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')
+# client = OpenAI(api_key = '')
 
 # training_file  = client.files.create(
 #   file=open("prepared_data_prepared.jsonl", "rb"),
@@ -65,7 +65,7 @@ training_file_name = "train.jsonl"
 write_to_jsonl(converted_data, training_file_name)
 
 from openai import OpenAI
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="")
 
 # Upload Training and Validation Files
 training_file = client.files.create(
@@ -84,7 +84,7 @@ response = client.fine_tuning.jobs.create(
 
 
 answer = client.chat.completions.create(
-  model='ft:gpt-3.5-turbo-0125:main:yt-tutorial:91Hs3R51',
+  model='fft:gpt-3.5-turbo-0125:main:books:91LhfIt1',
   messages=[
     {"role": "system", "content": "You are a content specialist at a certain book publisher. Will answer specific questions about book titles."},
     {"role": "user", "content": "Provide me information about 'Now We Are Six'"}
